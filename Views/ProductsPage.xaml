@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.ProductsPage"
+             xmlns:handlers="clr-namespace:ShopApp.Handlers">
+
+    <Shell.SearchHandler>
+        <handlers:ProductSearchHandler 
+            Placeholder="Bucar productos"
+            DisplayMemberName="Nombre"
+            ShowsResults="True"
+            ItemTemplate="{StaticResource ProductoDataTemplate}"
+            />
+    </Shell.SearchHandler>
+    
+    <!--<VerticalStackLayout x:Name="container" />-->
+
+    <RefreshView
+        Command="{Binding RefreshCommand}"
+        IsRefreshing="{Binding IsRefreshing, Mode=TwoWay}"
+        >
+        <CollectionView
+        x:Name="products"
+        SelectionMode="Single"
+        ItemsSource="{Binding Products}"
+        SelectedItem="{Binding ProductoSeleccionado, Mode=TwoWay}"
+        ItemTemplate="{StaticResource ProductoDataTemplate}"
+        />
+    </RefreshView>
+
+</ContentPage>

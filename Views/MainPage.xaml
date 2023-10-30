@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.MainPage">
+
+    <ContentPage.Resources>
+        <!--<Style TargetType="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="LightBlue" />
+                </Setter.Value>
+            </Setter>
+        </Style>-->        
+    </ContentPage.Resources>
+
+    <Grid 
+        ColumnDefinitions="Auto, Auto"          
+        RowDefinitions="Auto, Auto, Auto"
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+        
+        <Ellipse 
+            WidthRequest="50" 
+            HeightRequest="50" 
+            Fill="LightSteelBlue" 
+            Margin="4"
+            />
+        <Label 
+            x:Name="Category" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            />
+        <Label 
+            Text="Categorias" 
+            VerticalTextAlignment="Center" 
+            FontSize="30"
+            Grid.Column="1"
+            />
+
+        <Ellipse 
+            WidthRequest="50" 
+            HeightRequest="50" 
+            Fill="LightSteelBlue" 
+            Margin="4" 
+            Grid.Row="1"
+            />
+        <Label 
+            x:Name="Product" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            Grid.Row="1"
+            />
+        <Label 
+            Text="Productos" 
+            VerticalTextAlignment="Center" 
+            FontSize="30"
+            Grid.Column="1"
+            Grid.Row="1"
+            />
+
+        <Ellipse 
+            WidthRequest="50" 
+            HeightRequest="50" 
+            Fill="LightSteelBlue" 
+            Margin="4" 
+            Grid.Row="2"
+            />
+        <Label 
+            x:Name="Client" 
+            VerticalTextAlignment="Center" 
+            HorizontalTextAlignment="Center"
+            FontSize="30"
+            Grid.Row="2"
+            />
+        <Label 
+            Text="Clientes" 
+            VerticalTextAlignment="Center" 
+            FontSize="30"
+            Grid.Column="1"
+            Grid.Row="2"
+            />
+    </Grid>
+
+    <!--<Grid ColumnDefinitions="*,*" RowDefinitions="*,*" Style="{StaticResource Key=MiGrid}" >
+
+        --><!--<Grid.Background>
+            <RadialGradientBrush>
+                <GradientStop Color="Black" Offset="0" />
+                <GradientStop Color="YellowGreen" Offset="1" />
+            </RadialGradientBrush>
+        </Grid.Background>--><!--
+
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+        </Grid.GestureRecognizers>
+
+        <Label x:Name="Category" FontSize="30" TextColor="Black" />
+        <Label x:Name="Client" Grid.Column="1" FontSize="30" TextColor="Black" />
+        <Label x:Name="Product"  Grid.Row="1" Grid.Column="1" FontSize="30" TextColor="Black" />
+
+    </Grid>-->
+    <!--<VerticalStackLayout>
+        <Ellipse WidthRequest="200" HeightRequest="200">
+            <Ellipse.Fill>
+                <SolidColorBrush Color="Orange" />
+            </Ellipse.Fill>
+        </Ellipse>
+
+        <Rectangle WidthRequest="100" HeightRequest="80" Fill="Blue">
+            <Rectangle.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Rectangle.GestureRecognizers>
+        </Rectangle>
+    </VerticalStackLayout>-->
+
+</ContentPage>

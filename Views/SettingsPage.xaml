@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.SettingsPage"
+             Title="Configuración de app">
+
+    <VerticalStackLayout
+        Margin="20"
+        Spacing="20"
+        >
+        <HorizontalStackLayout
+            Spacing="20">
+            <Image
+                Source="about_icon"
+                HeightRequest="30"
+                WidthRequest="30"
+                />
+            <Label
+                VerticalOptions="Center"
+                FontSize="Medium"
+                Text="Informacion"
+                />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Spacing="20">
+            <Image
+                Source="privacy_icon"
+                HeightRequest="30"
+                WidthRequest="30"
+                />
+            <Label
+                VerticalOptions="Center"
+                FontSize="Medium"
+                Text="Privacidad y seguridad"
+                />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Spacing="20">
+            <Image
+                Source="faq_icon"
+                HeightRequest="30"
+                WidthRequest="30"
+                />
+            <Label
+                VerticalOptions="Center"
+                FontSize="Medium"
+                Text="Ayuda y soporte"
+                />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout
+            Spacing="20">
+            <Image
+                Source="logout_icon"
+                HeightRequest="30"
+                WidthRequest="30"
+                />
+            <Label
+                VerticalOptions="Center"
+                FontSize="Medium"
+                Text="Salir de sesion"
+                />
+            <HorizontalStackLayout.GestureRecognizers>
+                <TapGestureRecognizer
+                    Command="{Binding SalirSesionCommand}"
+                    />
+            </HorizontalStackLayout.GestureRecognizers>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+    
+    
+</ContentPage>

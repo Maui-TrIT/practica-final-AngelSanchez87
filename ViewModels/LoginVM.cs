@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShopApp.Services;
+using ShopApp.Views;
 
 namespace ShopApp.ViewModels;
 
@@ -8,6 +9,7 @@ public partial class LoginVM : GlobalVM
 {
     private readonly IConnectivity _connectivity;
     private readonly SecurityService _securityService;
+    private readonly INavegacionService _navegacionService;
 
     [ObservableProperty]
     private string email;
@@ -17,10 +19,12 @@ public partial class LoginVM : GlobalVM
 
     public LoginVM(
         IConnectivity connectivity,
-        SecurityService securityService)
+        SecurityService securityService,
+        INavegacionService navegacionService)
     {
         _connectivity = connectivity;
         _securityService = securityService;
+        _navegacionService = navegacionService;
 
         _connectivity.ConnectivityChanged += _connectivity_ConnectivityChanged;
     }
@@ -48,5 +52,12 @@ public partial class LoginVM : GlobalVM
     private bool StatusConnection()
     {
         return _connectivity.NetworkAccess == NetworkAccess.Internet ? true : false;
+    }
+
+    [RelayCommand]
+    private async Task OpenRegister()
+    {
+        var uri = $"{nameof(RegisterUserPage)}";
+        await _navegacionService.GoToAsync(uri);
     }
 }

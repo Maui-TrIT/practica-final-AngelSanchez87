@@ -42,4 +42,43 @@ public class SecurityService
 
         return true;
     }
+
+    public async Task<bool> RegisterUsuario(
+        string nombre,
+        string apellido,
+        string email,
+        string userName,
+        string telefono,
+        string password)
+    {
+        var url = $"{_settings.UrlBase}/api/usuario/registrar";
+        var loginRequest = new UsuarioRegisterRequest
+        {
+            Nombre = nombre,
+            Apellido = apellido,
+            Email = email,
+            Username = userName,
+            Telefono = telefono,
+            Password = password 
+        };
+
+        var json = JsonConvert.SerializeObject(loginRequest);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        var response = await _client.PostAsync(url, content);
+
+        if (!response.IsSuccessStatusCode)
+            return false;
+
+        var jsonResult = await response.Content.ReadAsStringAsync();
+        var result = JsonConvert.DeserializeObject<UsuarioResponse>(jsonResult);
+
+        Preferences.Set("accesstoken", result.Token);
+        Preferences.Set("userid", result.Id);
+        Preferences.Set("email", result.Email);
+        Preferences.Set("nombre", $"{result.Nombre} {result.Apellido}");
+        Preferences.Set("telefono", result.Telefono);
+        Preferences.Set("username", result.UserName);
+
+        return true;
+    }
 }

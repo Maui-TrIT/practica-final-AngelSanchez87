@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.RegisterUserPage"
+             Title="RegisterUserPage"
+             xmlns:vm="clr-namespace:ShopApp.ViewModels"
+             x:DataType="vm:RegisterUserVM"
+             Shell.NavBarIsVisible="False">
+    
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        Margin="20,0,20,0"
+        Spacing="20"
+        >
+        <Image
+            Source="dotnet_bot"
+            HorizontalOptions="Center"
+            HeightRequest="80"
+            WidthRequest="80"
+            />
+        <Label
+            Text="Crea tu cuenta"
+            TextColor="#101010"
+            FontSize="Large"
+            HorizontalOptions="Center"
+            />
+        <Label
+            Text="Ingresa tu informacion para crear tu cuenta de acceso a nuestra App"
+            TextColor="LightSlateGrey"
+            FontSize="Small"           
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            />
+        <Frame
+            HeightRequest="50"
+            IsClippedToBounds="True"
+            Padding="5">
+            <Entry
+                Placeholder="Nombre"
+                FontSize="Medium"
+                Text="{Binding Nombre}"
+                />
+        </Frame>
+        <Frame
+            HeightRequest="50"
+            IsClippedToBounds="True"
+            Padding="5">
+            <Entry
+                Placeholder="Apellido"
+                FontSize="Medium"
+                Text="{Binding Apellido}"
+                />
+        </Frame>
+        <Frame
+            HeightRequest="50"
+            IsClippedToBounds="True"
+            Padding="5">
+            <Entry
+                Placeholder="Email"
+                FontSize="Medium"
+                Text="{Binding Email}"
+                />
+        </Frame>
+        <Frame
+            HeightRequest="50"
+            IsClippedToBounds="True"
+            Padding="5">
+            <Entry
+                Placeholder="Username"
+                FontSize="Medium"
+                Text="{Binding UserName}"
+                />
+        </Frame>
+        <Frame
+            HeightRequest="50"
+            IsClippedToBounds="True"
+            Padding="5">
+            <Entry
+                Placeholder="Telefono"
+                FontSize="Medium"
+                Text="{Binding Telefono}"
+                />
+        </Frame>
+        <Frame
+            HeightRequest="50"
+            IsClippedToBounds="True"
+            Padding="5">
+            <Entry
+                Placeholder="Password"
+                FontSize="Medium"
+                IsPassword="True"
+                Text="{Binding Password}"
+                />
+        </Frame>
+
+        <Button
+            Text="Registrar usuario"
+            HeightRequest="50"
+            FontSize="Medium"
+            BackgroundColor="#1d94ab"
+            Command="{Binding RegisterUserCommand}"
+            />
+        <HorizontalStackLayout
+            Spacing="5"
+            HorizontalOptions="Center">
+            <Label
+                Text="Ya tienes una cuenta?"
+                FontSize="Medium"
+                />
+            <Label
+                Text="Inicia sesión"
+                FontSize="Medium"
+                TextColor="#1d94ab"
+                >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OpenLoginCommand}"
+                        />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

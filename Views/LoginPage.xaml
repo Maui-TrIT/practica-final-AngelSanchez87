@@ -46,5 +46,25 @@
             BackgroundColor="#1d94ab"
             Command="{Binding LoginMethodCommand}"
             />
+
+        <HorizontalStackLayout
+            Spacing="5"
+            HorizontalOptions="Center">
+            <Label
+                Text="No estas registrado?"
+                FontSize="Medium"
+                />
+            <Label
+                Text="Registrate ahora!"
+                FontSize="Medium"
+                TextColor="#1d94ab"
+                >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding OpenRegisterCommand}"
+                        />
+                </Label.GestureRecognizers>
+            </Label>
+        </HorizontalStackLayout>
     </VerticalStackLayout>   
 </ContentPage>

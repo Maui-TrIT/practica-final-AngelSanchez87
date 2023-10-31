@@ -14,6 +14,5 @@ public class UsuarioResponse
 
     public string Email { get; set; }
 
-    public string Teléfono { get; set; }
     public string Telefono { get; internal set; }
 }

@@ -6,6 +6,19 @@
              xmlns:vm="clr-namespace:ShopApp.ViewModels"
              x:DataType="vm:RegisterUserVM"
              Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="FrameRegisterPage" TargetType="Frame">
+                <Setter Property="HeightRequest"
+                        Value="50"/>
+                <Setter Property="IsClippedToBounds"
+                        Value="True"/>
+                <Setter Property="Padding"
+                        Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     
     <VerticalStackLayout
         VerticalOptions="Center"
@@ -31,60 +44,42 @@
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             />
-        <Frame
-            HeightRequest="50"
-            IsClippedToBounds="True"
-            Padding="5">
+        <Frame Style="{StaticResource FrameRegisterPage}">
             <Entry
                 Placeholder="Nombre"
                 FontSize="Medium"
                 Text="{Binding Nombre}"
                 />
         </Frame>
-        <Frame
-            HeightRequest="50"
-            IsClippedToBounds="True"
-            Padding="5">
+        <Frame Style="{StaticResource FrameRegisterPage}">
             <Entry
                 Placeholder="Apellido"
                 FontSize="Medium"
                 Text="{Binding Apellido}"
                 />
         </Frame>
-        <Frame
-            HeightRequest="50"
-            IsClippedToBounds="True"
-            Padding="5">
+        <Frame Style="{StaticResource FrameRegisterPage}">
             <Entry
                 Placeholder="Email"
                 FontSize="Medium"
                 Text="{Binding Email}"
                 />
         </Frame>
-        <Frame
-            HeightRequest="50"
-            IsClippedToBounds="True"
-            Padding="5">
+        <Frame Style="{StaticResource FrameRegisterPage}">
             <Entry
                 Placeholder="Username"
                 FontSize="Medium"
                 Text="{Binding UserName}"
                 />
         </Frame>
-        <Frame
-            HeightRequest="50"
-            IsClippedToBounds="True"
-            Padding="5">
+        <Frame Style="{StaticResource FrameRegisterPage}">
             <Entry
                 Placeholder="Telefono"
                 FontSize="Medium"
                 Text="{Binding Telefono}"
                 />
         </Frame>
-        <Frame
-            HeightRequest="50"
-            IsClippedToBounds="True"
-            Padding="5">
+        <Frame Style="{StaticResource FrameRegisterPage}">
             <Entry
                 Placeholder="Password"
                 FontSize="Medium"
